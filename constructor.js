@@ -1,16 +1,56 @@
-function Book(title, name, pages, status) {
-    this.title = title;
-    this.name = name;
-    this.pages = pages;
-    this.status = status;
-    console.log(this)
-    this.info = () => {
-        return `${title} by ${name}, ${pages}pages, ${status}`
-    }
+function displayForm(e) {
+    form.classList.toggle('hidden')
 };
 
-const book1 = new Book("The Hobbit", "J.R.R Tolkien", 256, "not read yet");
+function Book() {
+    this.title = form.title.value
+    this.author = form.author.value
+    this.pages = form.pages.value
+    this.status = form.status.value  
+};
 
-console.log(book1.info());
+const library = [];
 
-const book2 = new Object();
+const addBook = document.querySelector('.button')
+addBook.addEventListener('click', displayForm);
+
+const card = document.createElement('div');
+
+const lib = document.querySelector('.lib');
+
+
+const form = document.querySelector('form');
+
+const submit = document.querySelector('#submit');
+submit.addEventListener('click', display)
+
+function display(e) {
+    e.preventDefault();
+    const newBook = new Book();
+    library.unshift(newBook);
+    cardDetails(library);
+    displayForm();
+    form.reset();
+    console.log(library);
+}
+
+function cardDetails(arr) {
+    for (let i = 0; i < arr.length; i++){
+        const key = Object.keys(arr[i]);
+        for (let j = 0; j < key.length; j++) {
+            const data = document.createElement('p');
+            if (key[j] === 'author') {
+                data.textContent = `by ${arr[i][key[j]]}`
+            }
+            else if (key[j] === 'pages') {
+                data.textContent = `${arr[i][key[j]]} pages`
+            }
+            else {
+                data.textContent = arr[i][key[j]]
+            }
+            card.append(data);
+        }
+    }
+    lib.prepend(card);
+}
+
