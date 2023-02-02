@@ -20,9 +20,8 @@ const lib = document.querySelector('.lib');
 
 
 const form = document.querySelector('form');
+form.addEventListener('submit', display)
 
-const submit = document.querySelector('#submit');
-submit.addEventListener('click', display)
 
 function display(e) {
     e.preventDefault();
@@ -35,22 +34,24 @@ function display(e) {
 }
 
 function cardDetails(arr) {
-    for (let i = 0; i < arr.length; i++){
-        const key = Object.keys(arr[i]);
-        for (let j = 0; j < key.length; j++) {
-            const data = document.createElement('p');
-            if (key[j] === 'author') {
-                data.textContent = `by ${arr[i][key[j]]}`
-            }
-            else if (key[j] === 'pages') {
-                data.textContent = `${arr[i][key[j]]} pages`
-            }
-            else {
-                data.textContent = arr[i][key[j]]
-            }
-            card.append(data);
+    const key = Object.keys(arr[0]);
+    for (let j = 0; j < key.length; j++) {
+        const data = document.createElement('p');
+        if (key[j] === 'author') {
+            data.textContent = `by ${arr[0][key[j]]}`
         }
+        else if (key[j] === 'pages') {
+            data.textContent = `${arr[0][key[j]]} pages`
+        }
+        else {
+            data.textContent = arr[0][key[j]]
+        }
+        card.append(data);
+    
+       
     }
     lib.prepend(card);
 }
+
+
 
