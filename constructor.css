@@ -46,8 +46,9 @@ ul.nav {
 }
 
 svg {
-    width: 150px;
-    height: 150px;
+    width: 10rem;
+    height: 10rem;
+    display: block;
 }
 
 svg path {
@@ -106,3 +107,44 @@ form > button {
     display: block;
 }
 
+.lib {
+    display: grid;
+    padding-top: 2rem;
+    padding-left: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    height: fit-content;
+    padding: 1rem;
+    background-color: #FEB08E;
+}
+
+.card * {
+    line-height: 2rem;
+}
+
+.erase {
+    background-color: transparent;
+    color: red;
+    display: block;
+    margin-left: auto;
+    width: auto;
+    height: auto;
+    border: none
+}
+
+.complete {
+    background-color: green;
+    display: block;
+    padding: 0.5rem;
+}
+
+.read {
+    background-color: blue;
+    color: white;
+    display: block;
+    padding: 0.5rem;
+    width: 6rem;
+}

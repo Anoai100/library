@@ -32,11 +32,9 @@
                 <input id="pages" type="number" min="50" placeholder="50" required>
                 <fieldset>
                     <legend>Have you read this book?</legend>
-                    <input id="covered" type="radio" value="Read" name="status" required>
+                    <input id="covered" type="radio" value='yes' name="status" required>
                     <label for="covered">Complete</label><br>
-                    <input id="progress" type="radio" value="Reading" name="status">
-                    <label for="progress" type="radio">Still Reading</label><br>
-                    <input id="not-covered" type="radio" value="Not Read" name="status">
+                    <input id="not-covered" type="radio" value="no" name="status">
                     <label for="not-covered">Not Yet</label>
                 </fieldset>
                 <button id="submit" type="submit">Add Book</button>
