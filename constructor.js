@@ -4,11 +4,13 @@ function displayForm() {
     form.classList.toggle('hidden')
 }
 
-function Book() {
-    this.title = form.title.value
-    this.author = form.author.value
-    this.pages = form.pages.value
-    this.status = form.status.value
+class Book {
+    constructor() {
+        this.title = form.title.value
+        this.author = form.author.value
+        this.pages = form.pages.value
+        this.status = form.status.value
+    }
 }
 
 function display(e) {
